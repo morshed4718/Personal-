@@ -5,34 +5,27 @@ module.exports = {
         version: "1.0.1",
         prefix: false,
 	permssion: 0,
-	credits: "nayan", 
+	credits: "Fahim", 
 	description: "Fun",
 	category: "no prefix",
-	usages: "😒",
+	usages: "",
         cooldowns: 5, 
 },
 
-handleEvent: async function({ api, event, client, __GLOBAL }) {
+handleEvent: function({ api, event, client, __GLOBAL }) {
 	var { threadID, messageID } = event;
   const content = event.body ? event.body : '';
   const body = content.toLowerCase();
-  const axios = require('axios')
-const media = (
-    await axios.get(
-      'https://i.imgur.com/Yc2atQe.mp4',
-      { responseType: 'stream' }
-    )
-  ).data;
-
-	if (body.indexOf("Love")==0 || body.indexOf("❤️‍🔥")==0 || body.indexOf("💌")==0 || body.indexOf("💘")==0 || body.indexOf("💟")==0 || body.indexOf("I love u")==0 || body.indexOf("I love you")==0 || body.indexOf("valobashi")==0 || body.indexOf("Valobashi")==0 || body.indexOf("🖤")==0) {
+	if (body.indexOf(" ")==0 || body.indexOf("🕵️‍♀️")==0 || body.indexOf("😋")==0 || body.indexOf(" ")==0) {
 		var msg = {
-				body: "ভালোবাসা সুন্দর🖤",
-				attachment: media
+				body: "বা্ঁবু্ঁ খা্ঁই্ঁছো্ঁ__🤗🤭",
+				attachment: fs.createReadStream(__dirname + `/ArYan/babu khaiso.m4a`)
 			}
 			api.sendMessage( msg, threadID, messageID);
-    api.setMessageReaction("🖤", event.messageID, (err) => {}, true)
+    api.setMessageReaction("🥴", event.messageID, (err) => {}, true)
 		}
 	},
 	start: function({ nayan }) {
+
   }
-}
+    }
